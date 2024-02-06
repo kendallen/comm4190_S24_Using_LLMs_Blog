@@ -1,5 +1,5 @@
 ---
-title: Looking into LLMs
+title: My explorations with LLMs
 listing:
   contents: posts
   sort: date desc
