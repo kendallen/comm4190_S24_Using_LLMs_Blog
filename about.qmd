@@ -5,4 +5,4 @@ about:
   template: jolla
 ---
 
-About this blog
+About this blog and its author!
