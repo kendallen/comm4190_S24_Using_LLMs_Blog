@@ -11,10 +11,7 @@ website:
         
 format:
   html:
-    theme: minty
-    text: gray
-    css: styles.css
-
+   
 execute:
   freeze: auto
 
