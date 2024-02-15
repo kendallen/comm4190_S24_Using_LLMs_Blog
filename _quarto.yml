@@ -11,6 +11,9 @@ website:
         
 format:
   html:
+   theme: 
+    css: styles.css
+
    
 execute:
   freeze: auto
