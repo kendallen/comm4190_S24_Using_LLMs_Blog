@@ -5,7 +5,6 @@ about:
   template: jolla
 ---
 
-<img src="dexter.jpg" width="300px" />
 
 My name is Kendall and I am a third-year student at the University of Pennsylvania who just came back from a semester abroad in London! At Penn, I study Data & Network Science Communications, Spanish, and Consumer Psychology. Outside of the classroom, I am a Junior Captain of the Quaker Girls Dance Team, a Kite and Key Tour Guide, a member of the Wharton Women Marketing Committee, on the Executive Board of my sorority, and I do research at the Annenberg Health and Risk Communication Institute. I love to travel, see live performances, and play all of the NYT Mini Games (Letterboxed especially) in my free time.
 
