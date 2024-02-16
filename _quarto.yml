@@ -11,7 +11,7 @@ website:
         
 format:
   html:
-  theme: minty
+    theme: minty
   css: styles.css
 
    
