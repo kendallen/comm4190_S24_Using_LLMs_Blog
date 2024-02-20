@@ -12,7 +12,7 @@ website:
 format:
   html:
     theme: minty
-    css: styles.css
+
 
    
 execute:
