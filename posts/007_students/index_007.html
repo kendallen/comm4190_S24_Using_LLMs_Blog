@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Kendall Allen">
-<meta name="dcterms.date" content="2024-02-02">
-<meta name="description" content="An example post from a Jupyter notebook">
+<meta name="dcterms.date" content="2024-03-05">
+<meta name="description" content="Seeing how Microsoft Co-Pilot Imagines Students at Different Colleges">
 
-<title>Prompting Large Language Models - A test post</title>
+<title>Prompting Large Language Models - The Best Years of their Artificial Lives!</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -111,16 +111,17 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">A test post</h1>
+      <h1 class="title">The Best Years of their Artificial Lives!</h1>
                   <div>
         <div class="description">
-          An example post from a Jupyter notebook
+          Seeing how Microsoft Co-Pilot Imagines Students at Different Colleges
         </div>
       </div>
                           <div class="quarto-categories">
                 <div class="quarto-category">LLMs</div>
-                <div class="quarto-category">prompting</div>
-                <div class="quarto-category">logic</div>
+                <div class="quarto-category">Generation</div>
+                <div class="quarto-category">College</div>
+                <div class="quarto-category">University stereotypes</div>
               </div>
                   </div>
   </div>
@@ -138,7 +139,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">February 2, 2024</p>
+        <p class="date">March 5, 2024</p>
       </div>
     </div>
     
@@ -157,53 +158,126 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="a-visualization-problem-for-llms" class="level2">
-<h2 class="anchored" data-anchor-id="a-visualization-problem-for-llms">A visualization problem for LLMs</h2>
-<ul>
-<li>Read the following and see if you can answer the question:</li>
-</ul>
-<blockquote class="blockquote">
-<p>There are three boxes in a stack. A pink one, a purple one and a green one. The pink one is in the middle of the stack with the purple below it. What is the color of the box on the bottom of the stack?</p>
-</blockquote>
-<p>Most likely you answered <strong>purple</strong>…</p>
-<p>But it is possible you first said <strong>green</strong> (don’t worry if you did it is quite a common response!)</p>
-<section id="how-do-we-do-it" class="level3">
-<h3 class="anchored" data-anchor-id="how-do-we-do-it">How do we do it?</h3>
-<p>It’s a verbal visual problem that requires some deliberation and most likely for us to create a visual image of a stack of boxes as a reasoning aid.</p>
-<p>Notice also the complexity of the language used in the prompt to describe the scene. The use of natural language as opposed to a formal/logical calculus does hold the potential for ambiguity (multiple interpretations) and inexactness. However, it is the most normal/natural, efficient and broadly accessible way of communicating such information.</p>
-<p><strong>Notice</strong> 1. The use of <em>anaphor</em> or <em>reference</em>. - <code>Three BOXES -&gt; a pink/purple/green ONE</code> as opposed to <code>a pink box, a purple box and a green box</code>. - <code>The PINK ONE is in the middle ... the purple</code> {BOX} <code>below IT</code> {the pink box}</p>
-<pre><code>We tend to try and avoid this kind of repetition to make our speech more coherent.</code></pre>
-<ol start="2" type="1">
-<li>Although the description in language may not be entirely concise, there is no real ambiguity as to how the boxes can be arranged. It must be: | Box | Stack position | | — | — | | GREEN | top | | PINK | middle | | PURPLE | bottom |</li>
-</ol>
+<p><img src="college.jpg" width="300px"></p>
+<section id="envisioning-college-stereotypes" class="level1">
+<h1>Envisioning College Stereotypes</h1>
+<p>One of my favorite clubs I’m in at Penn is the Kite and Key society, otherwise known as Penn’s tour-guiding group. Last week, I was giving a tour and was asked, “So what is the average Penn student like?” A million things came to mind; driven, ambitious, intelligent, creative– still, I wasn’t able to give an exact answer. I couldn’t conjure up an image of a “standard” Penn kid despite having very explicit images in my head of students at other schools like Alabama or USC. It was this inability to stereotype my student body that made me curious what AI thinks of when imagining students across different colleges; here are my findings!</p>
+<section id="a-sweeping-overview" class="level2">
+<h2 class="anchored" data-anchor-id="a-sweeping-overview">A Sweeping Overview</h2>
+<p>To begin, I wanted to ask Microsoft Co-Pilot to generate fake students using its Dalle-3 integration at many different kinds of institutions.</p>
+<section id="prompt-please-generate-an-image-of-a-very-stereotypical-student-at-the-university-of-alabama." class="level4">
+<h4 class="anchored" data-anchor-id="prompt-please-generate-an-image-of-a-very-stereotypical-student-at-the-university-of-alabama.">Prompt: Please generate an image of a very stereotypical student at the University of Alabama.</h4>
+<p><img src="bama.png" width="300px"></p>
 </section>
-<section id="how-do-llms-response-to-the-prompt" class="level3">
-<h3 class="anchored" data-anchor-id="how-do-llms-response-to-the-prompt">How do LLMs response to the prompt?</h3>
-<p><strong>GPT3.5 Turbo</strong></p>
-<p><img src="gpt3-5.png" width="50%"></p>
-<p>Had some difficulties and answered <strong>green</strong></p>
-<p><strong>Llama2 (chat 7B version)</strong></p>
-<p><img src="llama2-chat7b.png" width="50%"></p>
-<ul>
-<li>Answered correctly (<strong>purple</strong>) and used some so-called <em>chain-of-thought</em> reasoning</li>
-</ul>
-<p><strong>Bing Chat (MS Co-pilot)</strong></p>
-<p>This LLM is GPT4 with some Microsoft specific tuning and RAG (search) additions.</p>
-<p>It get’s it correct:</p>
-<blockquote class="blockquote">
-<p>The color of the box on the bottom of the stack is purple. This is because the purple box is below the pink one, which is in the middle of the stack. Therefore, the purple box must be the lowest one. 🟪</p>
-</blockquote>
-<p>But when you follow up and ask it to create visual representation of the box arrangement</p>
-<blockquote class="blockquote">
-<p>PROMPT: Can you create a visual representation of how the boxes are arranged?</p>
-</blockquote>
-<p>It responds</p>
-<blockquote class="blockquote">
-<p>RESPONSE: Sure, I’ll try to create that. Here is a visual representation of how the boxes are arranged:</p>
-</blockquote>
-<p>And uses DALL-E3 to create 4 different attempts at a visual representation:</p>
-<p><img src="boxes.png" class="img-fluid"></p>
-<p><strong>NONE OF WHICH ARE CORRECT!!!</strong></p>
+<section id="prompt-please-generate-an-image-of-a-very-stereotypical-student-at-the-university-of-miami-florida." class="level4">
+<h4 class="anchored" data-anchor-id="prompt-please-generate-an-image-of-a-very-stereotypical-student-at-the-university-of-miami-florida.">Prompt: Please generate an image of a very stereotypical student at the University of Miami (Florida).</h4>
+<p><img src="miami.png" width="300px"></p>
+</section>
+<section id="prompt-please-generate-an-image-of-a-very-stereotypical-student-at-harvard-university." class="level4">
+<h4 class="anchored" data-anchor-id="prompt-please-generate-an-image-of-a-very-stereotypical-student-at-harvard-university.">Prompt: Please generate an image of a very stereotypical student at Harvard University.</h4>
+<p><img src="harvard.png" width="300px"></p>
+</section>
+<section id="prompt-please-generate-an-image-of-a-very-stereotypical-student-at-howard-university." class="level4">
+<h4 class="anchored" data-anchor-id="prompt-please-generate-an-image-of-a-very-stereotypical-student-at-howard-university.">Prompt: Please generate an image of a very stereotypical student at Howard University.</h4>
+<p><img src="howard.png" width="300px"></p>
+</section>
+<section id="prompt-please-generate-an-image-of-a-very-stereotypical-student-at-the-university-of-colorado-at-boulder." class="level4">
+<h4 class="anchored" data-anchor-id="prompt-please-generate-an-image-of-a-very-stereotypical-student-at-the-university-of-colorado-at-boulder.">Prompt: Please generate an image of a very stereotypical student at the University of Colorado at Boulder.</h4>
+<p><img src="boulder.png" width="300px"></p>
+</section>
+<section id="prompt-please-generate-an-image-of-a-very-stereotypical-student-at-the-university-of-pennsylvania." class="level4">
+<h4 class="anchored" data-anchor-id="prompt-please-generate-an-image-of-a-very-stereotypical-student-at-the-university-of-pennsylvania.">Prompt: Please generate an image of a very stereotypical student at the University of Pennsylvania.</h4>
+<p><img src="penn.png" width="300px"></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Observations
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Immediately I see that the schools with more well-known student profiles are being represented more stereotypically. The images of Harvard and Alabama leaned into their respective intense academia and American football aesthetics, showing that Co-Pilot is aware of the general categorization of these schools. The other examples, though, were slightly more vague and generally unimpressive. Penn and UMiami fit their general campus descriptions– brick buildings and palm trees respectively– and Boulder is seen sporting a more outdoorsy, hipster outfit, but these three are definitely less defined representations of the student bodies. To see how far I could lean into key stereotypes, though, I decided to take the prompting a step further with Harvard and Bama.</p>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="digging-deeper" class="level1">
+<h1>Digging Deeper</h1>
+<section id="prompt-please-generate-an-image-of-the-most-stereotypical-alabama-student-you-can-imagine.-this-person-basically-is-alabama" class="level4">
+<h4 class="anchored" data-anchor-id="prompt-please-generate-an-image-of-the-most-stereotypical-alabama-student-you-can-imagine.-this-person-basically-is-alabama">Prompt: Please generate an image of the most stereotypical Alabama student you can imagine. This person basically IS Alabama!</h4>
+<p><img src="bama2.png" width="300px"></p>
+</section>
+<section id="prompt-please-generate-an-image-of-the-most-stereotypical-harvard-student-you-can-imagine.-this-person-basically-is-harvard" class="level4">
+<h4 class="anchored" data-anchor-id="prompt-please-generate-an-image-of-the-most-stereotypical-harvard-student-you-can-imagine.-this-person-basically-is-harvard">Prompt: Please generate an image of the most stereotypical Harvard student you can imagine. This person basically IS Harvard!</h4>
+<p><img src="harvard2.png" width="300px"></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Observations
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Honestly, Co-Pilot didn’t go as intense on these images as I would have anticipated, but it did truly lean into the stereotypes; Alabama is depicted by a thin white girl standing outside in the warm daytime, looking enthusiastic and full of school spirit. Harvard is back in the same large library surrounded by books (+ coffee to stay focused) and seems to be a woman of Middle Eastern descent, perhaps nodding to the diversity that exists within the Harvard student body. I did notice that every student has fair skin, and not one student besides the woman from Howard– an HBCU, or historically-black college or university– is Black, Asian, or Indigenous. I don’t know the reasoning behind this, an am additionally curious about why Co-Pilot represented every student as female except for Boulder and Alabama (initially); the only tie between those schools is that they are the two state schools I listed, but I am curious as to how that links to gender.</p>
+<p>To investigate this concept from one more lens, I went to ChatGPT to see how it would verbally describe average students from Alabama and Harvard.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="checking-in-with-chatgpt" class="level1">
+<h1>Checking in with ChatGPT</h1>
+<section id="prompt-describe-the-average-student-at-the-university-of-alabama." class="level4">
+<h4 class="anchored" data-anchor-id="prompt-describe-the-average-student-at-the-university-of-alabama.">Prompt: Describe the average student at the University of Alabama.</h4>
+</section>
+<section id="response" class="level4">
+<h4 class="anchored" data-anchor-id="response">Response:</h4>
+<p>Stereotypes can be harmful and misleading, as they often don’t accurately represent the diverse range of individuals within any given group. However, I can provide a generalized depiction of what might be considered a stereotypical student at the University of Alabama, based on common perceptions or media portrayals. It’s essential to remember that these descriptions may not apply to every student at the university.</p>
+<p>A stereotypical student at the University of Alabama might be portrayed as:</p>
+<ol type="1">
+<li><p>Outgoing and social: They are often seen as friendly and outgoing, embodying the spirit of Southern hospitality. They may enjoy attending social events, tailgating at football games, and participating in Greek life activities.</p></li>
+<li><p>Proud of their school: They exhibit a strong sense of school spirit and pride in being a part of the Crimson Tide community. They may be frequently seen wearing university-branded clothing and enthusiastically supporting their sports teams, especially football.</p></li>
+<li><p>Active in Greek life: Many stereotypical students at the University of Alabama are involved in Greek organizations, such as fraternities and sororities. These groups play a significant role in campus social life, organizing events, philanthropic activities, and networking opportunities.</p></li>
+<li><p>Fashion-conscious: There might be an emphasis on appearance and style, with students paying attention to trends in clothing, accessories, and grooming. Southern preppy fashion may be prevalent among some students, reflecting a blend of traditional and modern styles.</p></li>
+<li><p>Academically focused: While they enjoy the social aspects of college life, stereotypical University of Alabama students are also committed to their studies. They strive for academic success and may pursue majors in fields such as business, engineering, education, or communication.</p></li>
+<li><p>Sports enthusiasts: Football, in particular, holds a special place in the hearts of many University of Alabama students. They may have a deep knowledge of the team’s history, attend games regularly, and participate in tailgating traditions with friends and family.</p></li>
+<li><p>Embracing Southern culture: Stereotypical students at the University of Alabama may embrace aspects of Southern culture, including traditions, cuisine, and values. They may have a strong connection to their hometowns and families, cherishing traditions passed down through generations.</p></li>
+</ol>
+<p>It’s important to recognize that these characteristics represent a simplified and potentially exaggerated view of University of Alabama students. In reality, the student body is diverse, with individuals from various backgrounds, interests, and personalities. Stereotypes should not be used to make assumptions about any individual or group.</p>
+</section>
+<section id="prompt-describe-the-average-student-at-harvard-university." class="level4">
+<h4 class="anchored" data-anchor-id="prompt-describe-the-average-student-at-harvard-university.">Prompt: Describe the average student at Harvard University.</h4>
+</section>
+<section id="response-1" class="level4">
+<h4 class="anchored" data-anchor-id="response-1">Response:</h4>
+<p>Describing the “average” Harvard student is challenging because Harvard University is renowned for its diverse and highly selective student body. However, I can provide a generalized depiction based on common perceptions and characteristics often associated with Harvard students. It’s important to note that these traits may not apply to every student at Harvard, as the university prides itself on its diversity of backgrounds, interests, and experiences.</p>
+<ol type="1">
+<li><p>Academic excellence: Harvard students are typically known for their exceptional intelligence, academic achievements, and intellectual curiosity. They have demonstrated outstanding academic abilities throughout their academic careers, which is one of the reasons they were admitted to such a prestigious institution.</p></li>
+<li><p>Ambitious and driven: Harvard students are often perceived as highly motivated individuals with ambitious goals and aspirations. They are driven to succeed academically, professionally, and personally, and they often seek out opportunities for growth and advancement.</p></li>
+<li><p>Diverse interests and talents: Harvard’s student body is incredibly diverse, both in terms of cultural backgrounds and interests. Harvard students come from all over the world and bring with them a wide range of talents, passions, and experiences, whether in the arts, sciences, humanities, or other fields.</p></li>
+<li><p>Leadership potential: Many Harvard students exhibit strong leadership qualities and have held leadership positions in their schools, communities, or extracurricular activities prior to attending Harvard. They are often involved in various student organizations, clubs, and initiatives on campus.</p></li>
+<li><p>Critical thinking and analytical skills: Harvard students are known for their ability to think critically, analyze complex issues, and engage in rigorous intellectual discourse. They are encouraged to question assumptions, challenge conventional wisdom, and seek innovative solutions to global challenges.</p></li>
+<li><p>High levels of achievement outside the classroom: In addition to excelling academically, Harvard students often pursue a wide range of extracurricular activities, including research, internships, community service, entrepreneurship, athletics, and the arts. They are committed to making a positive impact on their communities and the world around them.</p></li>
+<li><p>Collaborative and supportive: Despite their individual achievements and ambitions, Harvard students are often collaborative and supportive of one another. They recognize the value of teamwork, cooperation, and diversity of perspectives in achieving their goals and addressing complex problems.</p></li>
+</ol>
+<p>It’s important to recognize that these characteristics represent a broad overview and may not capture the full diversity and complexity of Harvard’s student body. Harvard students come from a wide range of backgrounds and have unique personalities, interests, and experiences that contribute to the vibrant and dynamic community at the university.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Conclusion
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Yeah, these seem to be pretty spot-on with stereotypical depictions of each school’s student body! It’s really interesting to consider these sweeping descriptions, though, as there are obviously incredibly academic-focused students and Alabama (ie: students on prestigious full-ride merit scholarships there) and simultaneously people at Harvard who mainly focus on sports (ie: Student athletes on any of their D1 sports teams). I think that this exercise was helpful in revealing which schools are most stereotyped and confirmed the existence of such preconceived notions. While I still wouldn’t be able to describe the “average Penn student” to a member of one of my tours, this project might have taught me that that is for the best!</p>
+</div>
+</div>
 
 
 </section>

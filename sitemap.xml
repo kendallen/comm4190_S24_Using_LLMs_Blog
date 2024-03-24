@@ -1,35 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/posts/005_gendered_explanations/index_5.html</loc>
-    <lastmod>2024-02-27T16:20:39.540Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/posts/006_colors/index_6.html</loc>
-    <lastmod>2024-02-27T16:20:39.544Z</lastmod>
+    <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/index.html</loc>
+    <lastmod>2024-03-24T18:03:05.441Z</lastmod>
   </url>
   <url>
     <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/posts/003_vday_post/index_3.html</loc>
-    <lastmod>2024-02-27T16:20:39.536Z</lastmod>
+    <lastmod>2024-03-24T18:03:05.453Z</lastmod>
   </url>
   <url>
-    <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/about.html</loc>
-    <lastmod>2024-02-27T16:20:39.524Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/index.html</loc>
-    <lastmod>2024-02-27T16:20:39.524Z</lastmod>
+    <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/posts/007_students/index_007.html</loc>
+    <lastmod>2024-03-24T18:03:05.477Z</lastmod>
   </url>
   <url>
     <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/posts/002_practice_post/index_2.html</loc>
-    <lastmod>2024-02-27T16:20:39.536Z</lastmod>
+    <lastmod>2024-03-24T18:03:05.453Z</lastmod>
   </url>
   <url>
-    <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/posts/001_my_first_post/index_1.html</loc>
-    <lastmod>2024-02-27T16:20:39.536Z</lastmod>
+    <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/posts/006_colors/index_6.html</loc>
+    <lastmod>2024-03-24T18:03:05.461Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/posts/005_gendered_explanations/index_5.html</loc>
+    <lastmod>2024-03-24T18:03:05.457Z</lastmod>
   </url>
   <url>
     <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/posts/004_rhymes/index_4.html</loc>
-    <lastmod>2024-02-27T16:20:39.540Z</lastmod>
+    <lastmod>2024-03-24T18:03:05.453Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/posts/001_my_first_post/index_1.html</loc>
+    <lastmod>2024-03-24T18:03:05.453Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/about.html</loc>
+    <lastmod>2024-03-24T18:03:05.441Z</lastmod>
   </url>
 </urlset>
