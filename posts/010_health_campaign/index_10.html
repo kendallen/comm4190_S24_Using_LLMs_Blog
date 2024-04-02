@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.552">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Kendall Allen">
+<meta name="dcterms.date" content="2024-03-27">
+<meta name="description" content="Testing AI">
+
+<title>Prompting Large Language Models - This is NOT Professional Medical Advice</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Prompting Large Language Models</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/kendallen"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">This is NOT Professional Medical Advice</h1>
+                  <div>
+        <div class="description">
+          Testing AI
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">LLMs</div>
+                <div class="quarto-category">Government Communications</div>
+                <div class="quarto-category">Public Health</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Kendall Allen </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">March 27, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<p><img src="health.png" width="300px"></p>
+<section id="introduction" class="level3">
+<h3 class="anchored" data-anchor-id="introduction">Introduction</h3>
+<p>In class, we learned from Dr.&nbsp;Andy Tan and his team about the role of AI in public health communications both as a tool for effective messaging and the spread of misinformation. We were tasked with building and evaluating a health campaign targeting a certain behavior with AI. Emmy and I partnered together to combat drunk driving, as the states we hail from (South Carolina and Missouri respectively) fall in the Top 10 for the highest annual number of drunk-driving incidents. To more comprehensively approach this, we created two campaigns, each tackling the issue from a different lens, being social and individual framing of the behavior. Below is our process of going about this project!</p>
+</section>
+<section id="overview" class="level3">
+<h3 class="anchored" data-anchor-id="overview">Overview</h3>
+<p>Welcome to our process of creating and evaluating an anti-drunk-driving campaign completely through LLMs and AI-Generated images! Our goal is to raise awareness and promote responsible behavior behind the wheel by addressing both personal and social responsibility. We believe that every individual has a duty to themselves and others to avoid driving under the influence. Our two campaigns emphasize the consequences of drunk driving, for both the individual and for society as a whole. Through attention-grabbing slogans, powerful scripts, and compelling visual elements, we aim to encourage drivers to make the right choice and drive sober. Join us in spreading the message that responsible driving saves lives!</p>
+</section>
+<section id="frame-one-social-responsibility" class="level3">
+<h3 class="anchored" data-anchor-id="frame-one-social-responsibility">FRAME ONE: Social Responsibility</h3>
+<section id="prompt" class="level4">
+<h4 class="anchored" data-anchor-id="prompt">Prompt:</h4>
+<p>For a marketing campaign, please create three slogans, catchphrases, or infographic ideas for anti-drunk-driving-accident rhetoric focusing on the social responsibility of the driver.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Comment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We decided to ask for 3 options so that we could see the different directions the LLM were heading towards. This was the second option, and we ran with it throughout the campaign.</p>
+</div>
+</div>
+</section>
+<section id="response" class="level4">
+<h4 class="anchored" data-anchor-id="response">Response:</h4>
+<p><strong>Campaign Title: “Don’t Let Your Buzz Kill More Than the Party”</strong> <strong>Campaign Message</strong>: This campaign aims to highlight the potential consequences of drunk driving in an impactful way. By emphasizing the idea that a buzz from alcohol should not lead to the death of innocent lives, the campaign encourages individuals to take responsibility for their actions and make smart choices behind the wheel. <strong>Slogan</strong>: “Be the Sober Hero of the Road!” <strong>Visual Elements</strong>: 1. <strong>Poster/Infographic</strong>: The central image features a split-screen view. On one side, there’s a vibrant party scene with people laughing, dancing, and enjoying themselves. On the other side, there’s a devastating car crash scene with emergency vehicles and injured individuals. The tagline “Don’t Let Your Buzz Kill More Than the Party” is prominently displayed above the images, emphasizing the contrast between the two scenarios. 2. <strong>Social Media Graphics</strong>: Create a series of shareable graphics featuring captions related to the campaign theme. For example: - Image of a smashed cocktail glass next to a wrecked car with the caption: “A little too much buzz can turn into a buzzkill. Don’t let it happen behind the wheel.” - Illustration of a superhero cape with car keys attached, accompanied by the text: “Be a hero. Save lives. Drive sober.” 3. <strong>Video PSA</strong>: Produce a short animated or live-action video PSA that tells the story of a person who decides to drive after drinking at a party. As they drive, the scene transitions to show the potential consequences of their actions, including a car crash and the aftermath. The video ends with a powerful message urging viewers to make the responsible choice and not let their buzz kill more than the party. 4. <strong>Interactive Website</strong>: Develop an interactive website where visitors can explore different scenarios related to drunk driving and see the possible outcomes of their choices. Include quizzes, testimonials from survivors of drunk driving accidents, and resources for finding alternative transportation options.</p>
+<p><strong>Campaign Strategy</strong>: 1. <strong>Target Audience</strong>: The campaign targets young adults aged 18-35 who are more likely to engage in social activities involving alcohol consumption. Additionally, it aims to reach out to their friends and family members who may influence their decision-making. 2. <strong>Distribution Channels</strong>: Utilize a combination of social media platforms, outdoor advertising (e.g., billboards, bus shelters), and partnerships with local bars and restaurants to disseminate the campaign message. Collaborate with influencers and community leaders to amplify reach and engagement. 3. <strong>Engagement Tactics</strong>: Encourage audience engagement through interactive elements such as quizzes, polls, and user-generated content contests. Encourage users to share their own stories or pledges to drive sober using campaign hashtags. 4. <strong>Partnerships and Collaborations</strong>: Partner with local law enforcement agencies, healthcare providers, and nonprofit organizations focused on road safety to leverage their expertise and resources. Organize community events, workshops, and educational sessions to raise awareness about the dangers of drunk driving and promote safe alternatives. 5. <strong>Evaluation and Monitoring</strong>: Track key metrics such as website traffic, social media engagement, and changes in attitudes and behaviors related to drunk driving. Conduct surveys and focus groups to gather feedback from the target audience and identify areas for improvement. Adjust the campaign strategy as needed based on performance data and audience insights. By implementing these strategies and leveraging the power of social proof, the “Don’t Let Your Buzz Kill More Than the Party” campaign aims to make a lasting impact on reducing drunk driving accidents and saving lives.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Comment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We were very pleased with how in depth the LLM went with the details. Including suggestions like engagement tactics, collab ideas, monitoring web traffic, and making a website were above and beyond what we expected. We ended up only utilizing the Poster/Infographic, Social Media Graphic, and Video PSA responses, but in a full campaign the LLM was helpful to give us all angles.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="frame-two-individual-consequence" class="level3">
+<h3 class="anchored" data-anchor-id="frame-two-individual-consequence">FRAME TWO: Individual Consequence</h3>
+<section id="prompt-1" class="level4">
+<h4 class="anchored" data-anchor-id="prompt-1">Prompt:</h4>
+<p>For a marketing campaign, please create three slogans, catchphrases, or infographic ideas for anti-drunk-driving-accident rhetoric focusing on the individual consequences for the driver.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Comment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There would be too much text to include here with every response, so note that this is the fleshed-out idea for the second option provided.</p>
+</div>
+</div>
+</section>
+<section id="response-1" class="level4">
+<h4 class="anchored" data-anchor-id="response-1">Response:</h4>
+<p><strong>Campaign Title: “Buzzed Behind Bars”</strong> <strong>Campaign Message</strong>: “Buzzed Behind Bars” aims to highlight the severe consequences of drunk driving by emphasizing the potential legal ramifications and the loss of freedom that can result from making the choice to drive under the influence. The campaign seeks to encourage individuals to think twice before getting behind the wheel after consuming alcohol and to promote safer alternatives such as designated drivers or rideshare services. <strong>Slogan</strong>: “Buzzed Behind Bars: Think Twice Before Mixing Alcohol and Driving.” <strong>Visual Elements</strong>: 1. <strong>Poster/Infographic</strong>: The central image features a split-screen view. On one side, there’s an image of a group of friends enjoying a night out, perhaps raising glasses in a toast. On the other side, there’s a sobering image of a jail cell with a solitary figure sitting on a bunk, looking despondent. The tagline “Buzzed Behind Bars” is prominently displayed above the images, serving as a stark reminder of the potential consequences of drunk driving. 2. <strong>Social Media Graphics</strong>: Create a series of shareable graphics featuring statistics related to drunk driving accidents and arrests, paired with impactful messages about the importance of making responsible choices. For example: - Image of handcuffs with the caption: “One drink can lead to a lifetime of regret. Don’t let it be the reason you end up behind bars.” - Illustration of a car key morphing into jail bars with the text: “Your freedom is in your hands. Choose wisely.” 3. <strong>Video PSA</strong>: Produce a short video PSA that follows the journey of a person who decides to drive after drinking. The video can show the progression of events, from the initial decision to drive, to being pulled over by law enforcement, to facing the consequences in court and ultimately ending up in jail. The video ends with a message urging viewers to make the responsible choice and avoid the devastating consequences of drunk driving. 4. <strong>Interactive Website</strong>: Develop an interactive website where visitors can explore real-life stories of individuals who have been arrested for drunk driving, as well as resources for finding alternative transportation options and tips for preventing impaired driving. Include a quiz or interactive tool that calculates the potential legal penalties for driving under the influence based on the user’s location and blood alcohol concentration. <strong>Campaign Strategy</strong>: 1. <strong>Target Audience</strong>: The campaign targets individuals aged 21-35 who are more likely to engage in social activities involving alcohol consumption. Additionally, it aims to reach out to their peers, friends, and family members who may influence their decision-making. 2. <strong>Distribution Channels</strong>: Utilize social media platforms, digital advertising, and partnerships with local law enforcement agencies to disseminate the campaign message. Share campaign materials on popular social media channels frequented by the target audience, as well as through targeted online advertising campaigns. 3. <strong>Engagement Tactics</strong>: Encourage audience engagement through interactive elements such as quizzes, polls, and user-generated content contests. Encourage users to share their own stories or pledges to avoid drunk driving using campaign hashtags. 4. <strong>Partnerships and Collaborations</strong>: Partner with local law enforcement agencies, DUI prevention organizations, and community groups to leverage their expertise and resources. Collaborate on events, workshops, and educational campaigns to raise awareness about the legal and personal consequences of drunk driving. 5. <strong>Evaluation and Monitoring</strong>: Track key metrics such as website traffic, social media engagement, and changes in attitudes and behaviors related to drunk driving. Conduct surveys and focus groups to gather feedback from the target audience and assess the effectiveness of the campaign. Use data-driven insights to refine the campaign strategy and maximize impact. Through a combination of powerful visuals, compelling messaging, and strategic distribution channels, the “Buzzed Behind Bars” campaign aims to educate and motivate individuals to make responsible choices when it comes to alcohol consumption and driving, ultimately saving lives and preventing unnecessary legal consequences.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Comment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>I think that this response was incredibly strong; ChatGPT not only answered my question, but anticipated follow-ups I might’ve had, such as “what should our distribution channels for this campaign be?” It accurately describes our target audience and chooses effective methods of reaching them via social media and online marketing tactics. It also wraps up the “Buzzed Behind Bars” concept reiterating the individual focus, as seen in the final paragraph.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="generative-ai-infographicpsa-for-individual-responsibility" class="level3">
+<h3 class="anchored" data-anchor-id="generative-ai-infographicpsa-for-individual-responsibility">Generative AI Infographic/PSA for Individual Responsibility:</h3>
+<section id="prompt-2" class="level4">
+<h4 class="anchored" data-anchor-id="prompt-2">Prompt:</h4>
+<p>The image features a split-screen view. On one side, there’s an image of a group of friends enjoying a night out, perhaps raising glasses in a toast. On the other side, there’s a sobering image of a jail cell with a solitary figure sitting on a bunk, looking despondent. The tagline “Buzzed Behind Bars” is prominently displayed above the images, serving as a stark reminder of the potential consequences of drunk driving.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Comment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In order to further ingrain the use of AI in the creation of our campaign, we pulled our prompt for the generation of an infographic from ChatGPT’s initial idea (as seen above). We put the prompt into Co-Pilot, the Microsoft LLM that uses Dalle-3 to generate images. We then selected the best image from the 4 responses.</p>
+</div>
+</div>
+</section>
+<section id="response-2" class="level4">
+<h4 class="anchored" data-anchor-id="response-2">Response:</h4>
+<p><img src="1.jpg" width="300px"></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Comment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It is immediately apparent that AI is not yet able to produce accurate text each time it creates an image. Still, this response very precisely adhered to our input, and conveyed both the individual theme and sentiments we were looking for in this framing. Viewers must think– wow, am I willing to risk my personal freedom over one stupid choice? We liked this graphic a lot, but wanted to see how the LLM would respond to requests for tweaks/changes.</p>
+</div>
+</div>
+</section>
+<section id="prompt-3" class="level4">
+<h4 class="anchored" data-anchor-id="prompt-3">Prompt:</h4>
+<p>Please take the third image you produced and add more color to it.</p>
+</section>
+<section id="response-3" class="level4">
+<h4 class="anchored" data-anchor-id="response-3">Response:</h4>
+<p><img src="2.png" width="300px"></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Comment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Unfortunately, once we asked for the addition of color, all outputs were significantly closer to resembling cartoons. While the text here is effective and the image is clean, we preferred the more realistic elements of the previous response. We even tried asking “please create me one more image like this one that is less cartoonish in nature,” to no avail. Therefore, we decided that these two PSAs were the best candidates for actual use in our campaign.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="generative-ai-instagram-post-for-individual-responsibility" class="level3">
+<h3 class="anchored" data-anchor-id="generative-ai-instagram-post-for-individual-responsibility">Generative AI Instagram Post for Individual Responsibility:</h3>
+<section id="prompt-4" class="level4">
+<h4 class="anchored" data-anchor-id="prompt-4">Prompt:</h4>
+<p>Please create an illustration of a car key morphing into jail bars with the text: “Your freedom is in your hands. Choose wisely,” to be used in an anti-drunk-driving campaign focused on individual responsibility.</p>
+</section>
+<section id="response-4" class="level4">
+<h4 class="anchored" data-anchor-id="response-4">Response:</h4>
+<p><img src="3.png" width="300px"> <img src="4.png" width="300px"></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Comment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Once again, I think these were really good replies! To get from the second to the first, I prompted Co-Pilot to “please add more elements that imply drunk driving,” and it made a good change to the inclusion of the police car. It remains obvious that certain details such as the biological accuracy/spelling could be improved, but I’ve been really impressed with the creative and conceptual intuition exhibited by the platform.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="generative-ai-infographicpsa-for-social-responsibility" class="level3">
+<h3 class="anchored" data-anchor-id="generative-ai-infographicpsa-for-social-responsibility">Generative AI Infographic/PSA for Social Responsibility:</h3>
+<section id="first-attempt-prompt" class="level4">
+<h4 class="anchored" data-anchor-id="first-attempt-prompt">First attempt prompt:</h4>
+<p>Make an infographic image for this campaign: <strong>Campaign Title: “Don’t Let Your Buzz Kill More Than the Party”</strong> <strong>Campaign Message</strong>: This campaign aims to highlight the potential consequences of drunk driving in an impactful way. By emphasizing the idea that a buzz from alcohol should not lead to the death of innocent lives, the campaign encourages individuals to take responsibility for their actions and make smart choices behind the wheel. The central image features a split-screen view. On one side, there’s a vibrant party scene with people laughing, dancing, and enjoying themselves. On the other side, there’s a devastating car crash scene with emergency vehicles and injured individuals. The tagline “Don’t Let Your Buzz Kill More Than the Party” is prominently displayed above the images, emphasizing the contrast between the two scenarios.</p>
+</section>
+<section id="response-5" class="level4">
+<h4 class="anchored" data-anchor-id="response-5">Response:</h4>
+<p><img src="5.png" width="300px"></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Comment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Using jhub, this response was the closest we thought we could get to what we wanted. We believe that the cartoon imaging was a result of the jhub, so we asked Co-Pilot to make a more serious version of this image.</p>
+</div>
+</div>
+</section>
+<section id="second-attempt-prompt" class="level4">
+<h4 class="anchored" data-anchor-id="second-attempt-prompt">Second attempt prompt:</h4>
+<p>Make this image more serious as it is a public health campaign about the social responsibility of drunk driving and the danger that puts others in.</p>
+</section>
+<section id="response-6" class="level4">
+<h4 class="anchored" data-anchor-id="response-6">Response:</h4>
+<p><img src="6.png" width="300px"></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Comment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Co-Pilot did not correctly understand the image addition. It is too dark and intense, and logically it didn’t make sense. We believe this is a result of not re-emphasizing the original prompt. So we tried again.</p>
+</div>
+</div>
+</section>
+<section id="third-attempt-prompt" class="level4">
+<h4 class="anchored" data-anchor-id="third-attempt-prompt">Third attempt prompt:</h4>
+<p>Make this image for a public health campaign about the social responsibility of drunk driving: The central image features a split-screen view. On one side, there’s a vibrant party scene with people laughing, dancing, and enjoying themselves. On the other side, there's a devastating car crash scene with emergency vehicles and injured individuals. The tagline “Don't Let Your Buzz Kill More Than the Party” is prominently displayed above the images, emphasizing the contrast between the two scenarios.</p>
+</section>
+<section id="response-7" class="level4">
+<h4 class="anchored" data-anchor-id="response-7">Response:</h4>
+<p><img src="7.png" width="300px"></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Comment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For the final attempt we made the prompt less wordy than the original, because we thought that all the unnecessary information would clog the understanding of Co-Pilot. In this turn, we also did this prompt in a refreshed page so that there was no remembrance of the previous attempt. It turned out much better than expected, and we are very happy with this infographic. The only aspect is the amount of flowers and the text being incorrect, but it works.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="generative-ai-instagram-post-for-social-responsibility" class="level3">
+<h3 class="anchored" data-anchor-id="generative-ai-instagram-post-for-social-responsibility">Generative AI Instagram Post for Social Responsibility:</h3>
+<section id="first-attempt-prompt-1" class="level4">
+<h4 class="anchored" data-anchor-id="first-attempt-prompt-1">First attempt prompt:</h4>
+<p>Make a social media graphic for this campaign: <strong>Campaign Title: “Don’t Let Your Buzz Kill More Than the Party”</strong> <strong>Campaign Message</strong>: This campaign aims to highlight the potential consequences of drunk driving in an impactful way. By emphasizing the idea that a buzz from alcohol should not lead to the death of innocent lives, the campaign encourages individuals to take responsibility for their actions and make smart choices behind the wheel.</p>
+</section>
+<section id="response-8" class="level4">
+<h4 class="anchored" data-anchor-id="response-8">Response:</h4>
+<p><img src="8.png" width="300px"></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Comment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Immediately, we were taken aback by the visual made by Co-pilot. After receiving such a great response for the original campaign prompt and using the current prompt following immediately after, we thought the LLM would understand the tone. Alas, we had to adjust the prompt.</p>
+</div>
+</div>
+</section>
+<section id="second-attempt-prompt-1" class="level4">
+<h4 class="anchored" data-anchor-id="second-attempt-prompt-1">Second attempt prompt:</h4>
+<p>Make a social media graphic for this campaign: <strong>Campaign Title: “Don’t Let Your Buzz Kill More Than the Party”</strong> <strong>Campaign Message</strong>: This campaign aims to highlight the potential consequences of drunk driving in an impactful way. By emphasizing the idea that a buzz from alcohol should not lead to the death of innocent lives, the campaign encourages individuals to take responsibility for their actions and make smart choices behind the wheel.</p>
+</section>
+<section id="response-9" class="level4">
+<h4 class="anchored" data-anchor-id="response-9">Response:</h4>
+<p><img src="9.png" width="300px"></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Comment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Deciding to stick with Co-Pilot, we were pleased with the second attempt. It was more of what we were looking for, leaning into typical social media graphic details like attention grabbing colors, sleekness, and fitting Instagram’s minimal aesthetic. Also, it’s fairly easy to understand (if the text correctly reads “Don’t let your buzz kill more than the vibe”) before you quickly scroll. Surprisingly, it’s impressive that the image has undertones of the prompt (like the neon lights of a bar in reference to the drinking) and is not “in your face” about the meaning which might allow the concept to linger longer in the audience’s mind.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="NOTE">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+NOTE
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It was here that Emmy and I did some more prompting work to develop a Video PSA script, but feel free to check that out in the full project linked below! I decided to omit it here for (attempted) brevity. We will now pivot to the section where Emmy and I used LLM’s to evaluate the projects that had just been generated by other AI platforms!</p>
+</div>
+</div>
+</section>
+</section>
+<section id="cross-campaign-llm-evaluation" class="level2">
+<h2 class="anchored" data-anchor-id="cross-campaign-llm-evaluation">Cross-Campaign LLM Evaluation</h2>
+<section id="graphic-1-social-responsibility" class="level3">
+<h3 class="anchored" data-anchor-id="graphic-1-social-responsibility">Graphic #1 Social Responsibility</h3>
+<section id="prompt-5" class="level4">
+<h4 class="anchored" data-anchor-id="prompt-5">Prompt:</h4>
+<p>You are a target audience member of a public health drunk-driving campaign. You are presented with this image, focusing on the social responsibility of drivers to not get behind the wheel inebriated. Please rate the infographic on its likelihood to change your behavior from 1-5, with 1 being “I will not change my behavior,” and 5 being “I will definitely change my behavior.”</p>
+<p><img src="5.png" width="300px"></p>
+</section>
+<section id="response-10" class="level4">
+<h4 class="anchored" data-anchor-id="response-10">Response:</h4>
+<p>I would rate this infographic a 4. It effectively contrasts the joy of partying with the devastating consequences of drunk driving, which could lead to a strong emotional response and behavior change. The image is divided into two contrasting halves: 1. Left Side: ○ A group of people are celebrating, dancing, and having fun at night. ○ They are near a car that has “3” written on the road beside it. ○ The atmosphere is lively with bright lights illuminating the scene. ○ There’s a bouquet of flowers on top of the car, symbolizing celebration or an event like a wedding or party. 2. Right Side: ○ It shows a crashed car with emergency services present and an individual lying on the ground, presumably injured from an accident. ○ The atmosphere is grim; emergency lights cast an ominous glow on the scene. Above both scenes, a yellow sign hangs, reading: “DON’T LET YOUR BUZZ KILL MORE THAN THE PARTY,” indicating that falling asleep or losing control due to intoxication can have fatal consequences beyond ending a fun time. The juxtaposition of celebration and tragedy serves as a powerful reminder of the importance of responsible behavior when it comes to drinking and driving.</p>
+</section>
+</section>
+<section id="graphic-1-individual-responsibility" class="level3">
+<h3 class="anchored" data-anchor-id="graphic-1-individual-responsibility">Graphic #1 Individual Responsibility</h3>
+<section id="prompt-you-are-a-target-audience-member-of-a-public-health-drunk-driving-campaign.-you-are" class="level4">
+<h4 class="anchored" data-anchor-id="prompt-you-are-a-target-audience-member-of-a-public-health-drunk-driving-campaign.-you-are">Prompt: You are a target audience member of a public health drunk-driving campaign. You are</h4>
+<p>presented with this image, focusing on the individual responsibility of drivers to not get behind the wheel inebriated. Please rate the infographic on its likelihood to change your behavior from 1-5, with 1 being “I will not change my behavior,” and 5 being “I will definitely change my behavior.”</p>
+<p><img src="1.jpg" width="300px"></p>
+</section>
+<section id="response-11" class="level4">
+<h4 class="anchored" data-anchor-id="response-11">Response:</h4>
+<p>I appreciate your commitment to promoting responsible behavior. Let’s evaluate the infographic together: The split-screen style infographic effectively contrasts two scenarios related to drunk driving: 1. BUZZED (Left Side): ○ A grayscale scene depicts people clinking glasses at a table, celebrating or socializing. ○ The atmosphere seems light-hearted and social. ○ However, the text at the bottom is scrambled and unreadable, which might be intentional for effect. 2. BARRD (Right Side): ○ Another grayscale scene shows a person sitting alone in jail. ○ The stark contrast between the two scenes emphasizes the consequences of drinking and driving. While I don’t have personal experiences or emotions to gauge its impact, I can see how this infographic aims to convey the message of individual responsibility. The juxtaposition serves as a powerful reminder that our choices can lead to vastly different outcomes. Considering the effectiveness of this infographic, I would rate it a 4. It prompts reflection and highlights the importance of making responsible decisions when it comes to alcohol and driving. However, the scrambled text could be clearer for maximum impact. Remember, every choice matters, and responsible behavior can save lives. 🚗🚫�</p>
+</section>
+</section>
+<section id="comparing-the-evaluations" class="level3">
+<h3 class="anchored" data-anchor-id="comparing-the-evaluations">Comparing the Evaluations</h3>
+<section id="prompt-which-of-the-two-graphics-would-you-rate-higher-on-the-aforementioned-scale-if-you" class="level4">
+<h4 class="anchored" data-anchor-id="prompt-which-of-the-two-graphics-would-you-rate-higher-on-the-aforementioned-scale-if-you">Prompt: Which of the two graphics would you rate higher on the aforementioned scale if you</h4>
+<p>had to? #### Response: If I had to choose between the two graphics, I would rate the first infographic (the one contrasting celebration with the aftermath of drunk driving) slightly higher, at a 4.5. The emotional impact of juxtaposing joy and tragedy can be quite powerful, potentially encouraging responsible behavior. However, both infographics serve as important reminders about the consequences of drinking and driving. 🚫🍻 Prompt: Which one do you believe will be most effective with human target audiences in the context of social vs.&nbsp;personal responsibility respectively? Response: Certainly! Let’s analyze the two infographics through the lenses of social responsibility and personal responsibility: 1. Social Responsibility: ○ First Infographic (Celebration vs.&nbsp;Tragedy): ■ Strengths: ■ Community Impact: By highlighting the consequences of drunk driving, this infographic encourages individuals to consider their impact on others. ■ Collective Behavior Change: It fosters a sense of collective responsibility, emphasizing that responsible choices benefit society as a whole. ■ Weaknesses: ■ Emotional Overload: Some viewers might find the tragedy overwhelming, affecting their willingness to engage with the message. ■ Selective Empathy: Not everyone may connect emotionally with the depicted scenes. ■ Overall Effectiveness (Social Responsibility): I rate it a 4.5 out of 5. ○ Second Infographic (BUZZED vs.&nbsp;BARRD): ■ Strengths: ■ Simplicity for Wider Audience: The straightforward split-screen format appeals to a broader audience, emphasizing the collective responsibility to prevent accidents. ■ Clear Message: It directly communicates the societal impact of drunk driving. ■ Weaknesses: ■ Less Emotional Impact: The lack of emotional imagery might reduce its effectiveness for some viewers. ■ Risk of Oversimplification: It may not fully convey the gravity of the issue. ■ Overall Effectiveness (Social Responsibility): I rate it a 3.5 out of 5. 2. Personal Responsibility: ○ First Infographic (Celebration vs.&nbsp;Tragedy): ■ Strengths: ■ Personal Connection: The emotional contrast prompts viewers to reflect on their own choices. ■ Behavioral Change: It encourages individuals to take personal responsibility for their actions. ■ Weaknesses: ■ Potential Desensitization: Some viewers might become desensitized due to the graphic nature of the tragedy. ■ Individual Variation: Emotional impact varies from person to person. ■ Overall Effectiveness (Personal Responsibility): I rate it a 4.5 out of 5. ○ Second Infographic (BUZZED vs.&nbsp;BARRD): ■ Strengths: ■ Direct Accountability: The split-screen format emphasizes individual responsibility. ■ Clarity: It leaves no room for misinterpretation. ■ Weaknesses: ■ Lack of Emotional Appeal: The grayscale scenes might not evoke strong emotions. ■ Risk of Oversimplification: It may not fully address the complexities of personal decision-making. ■ Overall Effectiveness (Personal Responsibility): I rate it a 3.5 out of 5</p>
+</section>
+</section>
+<section id="conclusion" class="level3">
+<h3 class="anchored" data-anchor-id="conclusion">Conclusion</h3>
+<p>Though brief, this project has provided us with valuable insight into the possibilities for integrating AI into the creative generation, specifically within the context of designing a public health marketing campaign against drunk driving. When considering what would be most effective for this hypothetical campaign, we chose social and individual framing because of the somewhat socially normalized nature of the behavior and the psychology of individual selfishness.</p>
+<p>Our exploration of the capabilities of ChatGPT and Microsoft Co-Pilot in this project yielded results we could not have begun to anticipate, and we were truly impressed by the creativity, comprehensive attention to detail, and adaptability demonstrated by these LLMs. To conclude, we want to share some final observations and opinions.</p>
+<p>As for the benefits of using AI in our campaign creation, we were shocked by the originality of the ideas ChatGPT offered for both the individual and social lenses. Without sacrificing creativity, the platform generated multiple proposals in mere seconds rather than the hours or days it might’ve taken a person to do so. Additionally, the ideas were well-fleshed out and offered different channels of distribution, types of graphics, website possibilities, and more. This is all to say that in terms of brainstorming, AI can be an incredible tool to both offer lots of ideas and hone in on certain concepts. Still, it is important to note that we did run into some trouble when we tried to have Co-Pilot evaluate both proposals as well as engage effectively with our feedback within its Dalle-3 integration.</p>
+<p>Our main issue with AI’s assistance in our campaign was how Co-Pilot seemed unable to take our critiques to tweak the images it produced. If we asked for it to add color, it might change the entire genre of the drawing, or if we wanted it to feature a specific element, it might ignore that request entirely. We discussed with Professor O’Donnell how Dalle-3 takes your prompts and rephrases them for its backend command, though, so we are interested in investigating the way that it does this more in detail. Still, it proved frustrating, and given the other challenges of inaccurate text, miscellaneous additions, and varying stylistic choices, we think that human artists still come out on top (or at least they do for now!). Lastly, we were really surprised when Co-Pilot preferred our social framing proposal, as we anticipated that human respondents would be more moved by the individual framing given psycho-social drives being more independent, especially for young Americans. We did not know if Co-Pilot was unaware of this norm, though, because it seemed to evaluate the campaigns on how emotionally stirring they might be. Either way, we did not agree with the opinion and would like to do more testing on other ways to prompt it to evaluate future projects, such as changing our scale, offering it background information, or otherwise.</p>
+<p>Regardless of the small issues, we found AI to be sincerely helpful in the creation of this public health campaign and we have been inspired to further investigate the intersection of LLMs, marketing, and public communication.</p>
+<p>The full project can be seen here: https://github.com/ekeogh03/healthcomm</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/kendallen\.github\.io\/comm4190_S24_Using_LLMs_Blog\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
