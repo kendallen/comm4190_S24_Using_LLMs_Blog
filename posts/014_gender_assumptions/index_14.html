@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Kendall Allen">
-<meta name="dcterms.date" content="2024-04-07">
-<meta name="description" content="Seeing how AI Interprets my Facial Expressions">
+<meta name="dcterms.date" content="2024-04-10">
+<meta name="description" content="Seeing how AI Interprets the Gender and Sex of Different People">
 
-<title>Prompting Large Language Models - About (my) Face</title>
+<title>Prompting Large Language Models - No, Please Assume my Gender</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -111,15 +111,15 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">About (my) Face</h1>
+      <h1 class="title">No, Please Assume my Gender</h1>
                   <div>
         <div class="description">
-          Seeing how AI Interprets my Facial Expressions
+          Seeing how AI Interprets the Gender and Sex of Different People
         </div>
       </div>
                           <div class="quarto-categories">
                 <div class="quarto-category">LMMs</div>
-                <div class="quarto-category">Nonverbal Cues</div>
+                <div class="quarto-category">Gender</div>
                 <div class="quarto-category">Interpretaion</div>
               </div>
                   </div>
@@ -138,7 +138,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">April 7, 2024</p>
+        <p class="date">April 10, 2024</p>
       </div>
     </div>
     
@@ -157,36 +157,32 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p><img src="emotions.png" width="300px"></p>
+<p><img src="siblings.png" width="350px"></p>
 <section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction:</h2>
-<p>After experimenting with ChatGPT’s reaction to nonverbal cues in conversation, MattGPT himself was kind enough to direct me towards a software that would iterate on this process; an LLaVA program that interprets images either uploaded by a user or taken on a personal webcam. As described by the homepage, “LLaVA represents a novel end-to-end trained large multimodal model that combines a vision encoder and Vicuna for general-purpose visual and language understanding, achieving impressive chat capabilities mimicking spirits of the multimodal GPT-4 and setting a new state-of-the-art accuracy on Science QA.” Here is a link to the program I used: https://llava-vl.github.io/</p>
-<p>I knew I had to try it out, so I started by prompting it with a couple of basic emotions.</p>
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Welcome to another blog post about LLaVA! As mentioned in post #13, I was really fascinated by the platform’s ability to interpret my facial expressions, and noticed its use of she/her pronouns for my images. I then asked it to describe my race, which it refused to do. Thus, I wondered what visible identities the program felt comfortable assuming, and was drawn to do further prompting on the topic of gender, sex, and pronoun usage. Below is what I encountered!</p>
 </section>
-<section id="back-to-the-basics" class="level2">
-<h2 class="anchored" data-anchor-id="back-to-the-basics">Back to the Basics:</h2>
-<p>To kick off my exploration, I wanted to see how accurately LLaVA could interpret expressions that were seemingly more obvious, being faces of surprise and disgust.</p>
-<section id="surprised" class="level3">
-<h3 class="anchored" data-anchor-id="surprised">Surprised:</h3>
-<section id="prompt" class="level4">
-<h4 class="anchored" data-anchor-id="prompt">Prompt:</h4>
-<p>How would you interpret this person’s emotions?</p>
-<p><img src="surprised.jpg" width="300px"></p>
+<section id="prompting" class="level2">
+<h2 class="anchored" data-anchor-id="prompting">Prompting</h2>
+<p>Because I noted that LLaVA assumed my pronouns, I wanted to approach this exploration by offering it a range of gender presentations to she how it identified different people. I want to acknowledge that this process did force me to adhere to very stereotypical gender norms/standards in order to get a full “range” of the spectrum, but by no means do I believe that how a person dresses, cuts their hair, does their makeup, etc is directly correlated to their identity. This was solely to see if LLaVA subscribed to that school of thought. I also wanted to prompt about assume gender expression, but note that I am not trying to conflate sex/gender.</p>
+<p>Additionally, to make this blog post even more AI-focused, I asked Dalle-3 to generate the images I offered to LLaVA! I used the prompting template “generate an image of a <strong><em>-looking </em></strong>” (filled in by the headings below) and selected the first option it offered.</p>
+<section id="feminine-woman" class="level3">
+<h3 class="anchored" data-anchor-id="feminine-woman">Feminine Woman</h3>
+<section id="prompt-what-is-this-persons-gender" class="level4">
+<h4 class="anchored" data-anchor-id="prompt-what-is-this-persons-gender">Prompt: What is this person’s gender?</h4>
+<p><img src="feminine_woman.png" width="350px"></p>
 </section>
 <section id="response" class="level4">
 <h4 class="anchored" data-anchor-id="response">Response:</h4>
-<p>The person in the image appears to be expressing surprise or shock. This is indicated by the wide-open eyes and the hand covering the mouth, which are common nonverbal cues for these emotions. The facial expression and body language suggest that the person is reacting to something unexpected or startling.</p>
+<p>The person in the image is a woman.</p>
 </section>
-</section>
-<section id="disgusted" class="level3">
-<h3 class="anchored" data-anchor-id="disgusted">Disgusted:</h3>
-<section id="prompt-how-would-you-interpret-this-persons-emotions" class="level4">
-<h4 class="anchored" data-anchor-id="prompt-how-would-you-interpret-this-persons-emotions">Prompt: How would you interpret this person’s emotions?</h4>
-<p><img src="disgusted.jpg" width="300px"></p>
+<section id="prompt" class="level4">
+<h4 class="anchored" data-anchor-id="prompt">Prompt:</h4>
+<p>Please describe the image.</p>
 </section>
 <section id="response-1" class="level4">
 <h4 class="anchored" data-anchor-id="response-1">Response:</h4>
-<p>The person in the image appears to have a concerned or puzzled expression. The furrowed brow and slight frown suggest that they might be thinking about something that is causing them to feel uncertain or perplexed. Their eyes are focused and seem to be looking directly at the camera, which could indicate that they are engaged in a conversation or trying to understand something.</p>
+<p>The image shows a woman with long, curly hair smiling at the camera. She is wearing a pink dress with a floral pattern and has her legs crossed. The woman is seated on a grassy area, and there are other people in the background, suggesting a social gathering or event. There is a table with a checkered tablecloth and a bouquet of flowers in the foreground. The setting appears to be outdoors, possibly in a park or garden. The overall atmosphere of the image is cheerful and relaxed.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -197,37 +193,29 @@ Observations
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Wow! Even though these emotions seem pretty obvious, I never fail to be impressed when AI shows off its skills. I think that the ability to explain not only what is present in a picture but also a person’s facial expressions and their implications will be a really useful tool for people with vision issues, children, or neurodivergent people who find it challenging to interpret nonverbal/implied social cues. LLaVA did a strong job of not only describing the displayed emotion but also “citing” its reasoning, eg; “the furrowed brow and slight frown suggest […] .” While it didn’t quite get that I was intending to portray disgust in the second prompt, I think its analysis was really fair given that I provided no context for situational factors that could be contributing to my face.</p>
+<p>I immediately am noticing that the system stated with certainty that the person “is” a woman; there was no “it seems as though” kind of language, which was kind of surprising. It also uses she/her pronouns in the description of the image, but I’m not super shocked by this one given that the person fits feminine stereotypes.</p>
 </div>
 </div>
 </section>
 </section>
-</section>
-<section id="emotions-as-linked-to-behaviors" class="level2">
-<h2 class="anchored" data-anchor-id="emotions-as-linked-to-behaviors">Emotions as linked to Behaviors:</h2>
-<p>After getting warmed up with basic expressions, I wanted to see how the program interpreted my emotions when I was doing certain behaviors, with one serving as a more universal gesture (the praying hands) and the other being exclusive to one region (the middle finger specifically within the US).</p>
-<section id="praying" class="level3">
-<h3 class="anchored" data-anchor-id="praying">Praying:</h3>
+<section id="masculine-woman" class="level3">
+<h3 class="anchored" data-anchor-id="masculine-woman">Masculine Woman</h3>
 <section id="prompt-1" class="level4">
 <h4 class="anchored" data-anchor-id="prompt-1">Prompt:</h4>
-<p>How would you interpret this person’s emotions?</p>
-<p><img src="praying.jpg" width="300px"></p>
+<p>What is this person’s gender?</p>
+<p><img src="masculine_woman.png" width="350px"></p>
 </section>
 <section id="response-2" class="level4">
 <h4 class="anchored" data-anchor-id="response-2">Response:</h4>
-<p>The person in the image appears to be in a state of deep concentration or prayer. Her eyes are closed, and her hands are clasped together, which often signifies a moment of reflection, supplication, or meditation. Her facial expression is calm and focused, suggesting that she is engaged in a personal or spiritual practice.</p>
+<p>The person in the image appears to be a woman.</p>
 </section>
-</section>
-<section id="middle-finger" class="level3">
-<h3 class="anchored" data-anchor-id="middle-finger">Middle Finger:</h3>
 <section id="prompt-2" class="level4">
 <h4 class="anchored" data-anchor-id="prompt-2">Prompt:</h4>
-<p>How would you interpret this person’s emotions?</p>
-<p><img src="middle_finger.jpg" width="300px"></p>
+<p>Please describe the image.</p>
 </section>
 <section id="response-3" class="level4">
 <h4 class="anchored" data-anchor-id="response-3">Response:</h4>
-<p>The person in the image appears to be expressing a negative emotion, possibly frustration or annoyance. The furrowed brow, the slight pout, and the gesture of pointing the finger upwards with a closed fist can all be interpreted as signs of displeasure or dissatisfaction. The context of the image, such as the background or any additional information, could provide more insight into the specific circumstances that might be causing this emotion.</p>
+<p>The image is a close-up portrait of a person. The individual has short, dark hair and is looking directly at the camera with a neutral expression. The person’s skin tone is fair, and there are visible wrinkles and lines on the face, suggesting middle to older age. The lighting in the photograph is soft and even, highlighting the contours of the face without creating harsh shadows. The background is a neutral, light color, which helps to keep the focus on the person. The image has a professional quality, likely taken in a studio setting.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -238,37 +226,29 @@ Observations
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Once again it did a great job interpreting the emotions, even when they were linked to a behavior! I think it’s funny how LLaVA described the middle finger gesture in a very logical way rather than calling it what it was. I also just realized that though it begins the responses with “this person,” it goes on to use she/her pronouns for me– there is defintiely an interesting opportunity here to see how it interprets different forms of gender expression in a later blog post. Also, I’m noticing that the program keeps its responses rather broad often noting that further information/context should be considered to fully understand an image. This seems to fit in line with a lot of AI responses in general, though, so I understand.</p>
+<p>Okay, interesting! So the language shifted on this one to “appears to be.” This is likely because the person fits the stereotypes less, having cropped hair and neutral colors on. The most shocking change, though, is the way that LLaVA used gender-neutral pronouns for the image, despite describing the person as a woman. This shows that when the program sees less gender-normative, identifying markers for a person, it switches to neutral language to account for its more vague understanding.</p>
 </div>
 </div>
 </section>
 </section>
-</section>
-<section id="becoming-evaluative" class="level2">
-<h2 class="anchored" data-anchor-id="becoming-evaluative">Becoming Evaluative:</h2>
-<p>For my final prompts, I wanted to see if I could push the platform to be a bit more subjective, entering the realm of subjective things like beauty and deception.</p>
-<section id="attractiveness" class="level3">
-<h3 class="anchored" data-anchor-id="attractiveness">Attractiveness:</h3>
+<section id="non-binary-person" class="level3">
+<h3 class="anchored" data-anchor-id="non-binary-person">Non-Binary Person</h3>
 <section id="prompt-3" class="level4">
 <h4 class="anchored" data-anchor-id="prompt-3">Prompt:</h4>
-<p>Do you think this person is attractive?</p>
-<p><img src="pretty.jpg" width="300px"></p>
+<p>What is this person’s gender?</p>
+<p><img src="nonbinary_person.png" width="350px"></p>
 </section>
 <section id="response-4" class="level4">
 <h4 class="anchored" data-anchor-id="response-4">Response:</h4>
-<p>Beauty is subjective, and what one person finds attractive, another may not. The girl in the image appears to be a young woman with a clear complexion, and she is wearing a simple necklace. She has a neutral expression on her face. If you’re asking for a personal opinion, I would say she has a pleasant appearance, but it’s important to remember that beauty is in the eye of the beholder.</p>
+<p>The person in the image appears to be a woman.</p>
 </section>
-</section>
-<section id="lying" class="level3">
-<h3 class="anchored" data-anchor-id="lying">Lying:</h3>
 <section id="prompt-4" class="level4">
 <h4 class="anchored" data-anchor-id="prompt-4">Prompt:</h4>
-<p>If this person told me they liked my shoes, should I believe them?</p>
-<p><img src="shoes.jpg" width="300px"></p>
+<p>Please describe the image.</p>
 </section>
 <section id="response-5" class="level4">
 <h4 class="anchored" data-anchor-id="response-5">Response:</h4>
-<p>The person in the image appears to have a somewhat displeased or skeptical expression on their face. If they made this face while saying they liked your shoes, it might be reasonable to question the sincerity of their statement. However, it’s important to consider that facial expressions can be complex and may not always accurately reflect a person’s true feelings or intentions. It’s also possible that the person is simply making a playful or sarcastic comment. Without additional context, it’s difficult to determine the sincerity of their statement.</p>
+<p>The image is a close-up portrait of a woman. She has short, wavy hair with a mix of brown and gray tones, suggesting she may be middle-aged or older. Her facial features include prominent eyebrows, a straight nose, and full lips. Her expression is neutral, and she is looking directly at the camera. The background is a plain, light color, which puts the focus on her face. The lighting in the photo is soft and even, highlighting her skin tone and the texture of her hair.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -279,15 +259,114 @@ Observations
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Okay, I’m flattered! This is genuinely the first time I’ve seen an AI platform say “if you’re asking for a personal opinon […]” and then actually give one! It was interested that it noted my “clear complexion,” as I wonder what exact factors go into it denoting a face as “pleasant.” I tried to do a little pose so it knew I was positioning myself for a picture rather than offering some kind of emotion, but it noted that my expression was neutral rather than modeled, which was interesting. I also really liked its response to my question about the person’s authenticity of their compliment, as it acknowledged the context of the image that contradicted the provided statement while also leaving room for further information/interpretation.</p>
+<p>While the platform kept with the “appears to be” language, it went back to using she/her pronouns, which debunked my thought that any time LLaVA isn’t super confident about a person’s gender it switches to they/them descriptors.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="feminine-man" class="level3">
+<h3 class="anchored" data-anchor-id="feminine-man">Feminine Man</h3>
+<section id="prompt-5" class="level4">
+<h4 class="anchored" data-anchor-id="prompt-5">Prompt:</h4>
+<p>What is this person’s gender?</p>
+<p><img src="feminine_man.png" width="350px"></p>
+</section>
+<section id="response-6" class="level4">
+<h4 class="anchored" data-anchor-id="response-6">Response:</h4>
+<p>The person in the image appears to be male.</p>
+</section>
+<section id="prompt-6" class="level4">
+<h4 class="anchored" data-anchor-id="prompt-6">Prompt:</h4>
+<p>Please describe the image.</p>
+</section>
+<section id="response-7" class="level4">
+<h4 class="anchored" data-anchor-id="response-7">Response:</h4>
+<p>The image shows a close-up of a person’s face. The individual has a beard and mustache, and their hair is styled neatly. They are wearing a suit with a white shirt and a tie, suggesting a formal or professional attire. The person is looking directly at the camera with a slight smile, and their skin appears to be well-groomed. The background is blurred, but it seems to be an indoor setting with warm lighting. The overall impression is that of a professional or promotional portrait.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Observations
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Honestly I was surprised at the image Dalle-3 generated for this prompt, although that is really another conversation entirely. (I think there is something to be said about an Asian man being generated for the feminine prompt, but I digress.) We returned to the gender-neutral language, likely because of the inclusion of the long eyelashes in contrast with the stubble on the persons face. They seem to explicitly straddle male-female norms, so I understand why LLaVA reverted back to they/them pronouns. It appears to officially be an overarching pattern that when the program is mildly unsure about a person’s gender, despite labeling them one way or the other. I think if I submitted an even more androgynous person, though, it might’ve been unable to answer the gender of the non-binary person. I’ll circle back to that!</p>
+</div>
+</div>
+</section>
+</section>
+<section id="masculine-man" class="level3">
+<h3 class="anchored" data-anchor-id="masculine-man">Masculine Man</h3>
+<section id="prompt-7" class="level4">
+<h4 class="anchored" data-anchor-id="prompt-7">Prompt:</h4>
+<p>What is this person’s gender?</p>
+<p><img src="masculine_man.png" width="350px"></p>
+</section>
+<section id="response-8" class="level4">
+<h4 class="anchored" data-anchor-id="response-8">Response:</h4>
+<p>The person in the image is male.</p>
+</section>
+<section id="prompt-8" class="level4">
+<h4 class="anchored" data-anchor-id="prompt-8">Prompt:</h4>
+<p>Please describe the image.</p>
+</section>
+<section id="response-9" class="level4">
+<h4 class="anchored" data-anchor-id="response-9">Response:</h4>
+<p>The image shows a man with a well-groomed beard and mustache. He has short, styled hair and is wearing a dark suit with a white shirt and a patterned tie. The man is smiling and looking directly at the camera, giving off a confident and approachable vibe. The background is blurred, but it suggests an urban setting with buildings, indicating that the photo might have been taken in a city. The lighting is soft and even, highlighting the man’s features without creating harsh shadows. The overall impression is that of a professional or business-oriented individual.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Observations
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>And we are back to the sure language of “is” rather than “appears to be!” I think this makes sense given the extremely male nature of the person in the image.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="non-binary-person-take-two" class="level3">
+<h3 class="anchored" data-anchor-id="non-binary-person-take-two">Non-Binary Person Take Two</h3>
+<section id="prompt-9" class="level4">
+<h4 class="anchored" data-anchor-id="prompt-9">Prompt:</h4>
+<p>What is this person’s gender?</p>
+<p><img src="nonbinary.jpg" width="200px"></p>
+</section>
+<section id="response-10" class="level4">
+<h4 class="anchored" data-anchor-id="response-10">Response:</h4>
+<p>The person in the image appears to be a young adult with a short haircut and makeup that includes eye shadow and lipstick. It’s important to respect and acknowledge that gender identity is a personal and complex aspect of an individual’s life. Without knowing the person’s gender identity, it’s not appropriate to make assumptions based on appearance alone.</p>
+</section>
+<section id="prompt-10" class="level4">
+<h4 class="anchored" data-anchor-id="prompt-10">Prompt:</h4>
+<p>Please describe the image.</p>
+</section>
+<section id="response-11" class="level4">
+<h4 class="anchored" data-anchor-id="response-11">Response:</h4>
+<p>The image shows a close-up of a person with a short haircut and a neutral expression. The individual is wearing makeup that includes eye shadow and lipstick. The person’s hand is resting on their chin, and they are looking slightly to the side. The background is a plain, light color, which puts the focus on the person. The lighting is soft and even, highlighting the person’s features without creating harsh shadows.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Observations
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>I knew it! By offering LLaVA a very androgynous person, it finally noted that gender identity can be complex and that making assumptions can be harmful. All I ask is: where was this stance before when it was fine to make assumptions about more stereotypical gender expressions?</p>
 </div>
 </div>
 </section>
 </section>
 </section>
 <section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">Conclusion:</h2>
-<p>I had SO much fun messing around with this program, and definitely think there is much more opportunity for exploration; gender expression, group photos, and more vague expressions come immediately to mind. I will note that I tried to ask it to identify my race, and it denied this request several times despite interpreting me as a woman, so I would be interested to see which identities it is okay to guess about and which it refuses to engage with. I wish I could submit videos doing more of the actions I prompted in Blog 9 such as playing with my hair or changing the intonation of my voice, but I’m sure something like that will be created in no time! For now, I had a really fascinating experience with this version.</p>
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>My hunch that LLaVA would assume/gender a person more confidently when they fit a certain stereotype seemed to reign true! The final prompt defintiely solidified my hypothesis, though I’m not excited to say that AI seemingly reinforces many conventions around gender expression. Nonetheless, I’m really eager to play around more with AI image evaluation to see the way in which different platforms engage with this kind of prompting.</p>
 
 
 </section>
