@@ -1,67 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/about.html</loc>
-    <lastmod>2024-04-16T22:27:44.877Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/posts/004_rhymes/index_4.html</loc>
-    <lastmod>2024-04-16T22:27:44.889Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/posts/005_gendered_explanations/index_5.html</loc>
-    <lastmod>2024-04-16T22:27:44.893Z</lastmod>
+    <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/index.html</loc>
+    <lastmod>2024-04-23T02:29:28.345Z</lastmod>
   </url>
   <url>
     <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/posts/007_students/index_7.html</loc>
-    <lastmod>2024-04-16T22:27:44.913Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/posts/003_vday_post/index_3.html</loc>
-    <lastmod>2024-04-16T22:27:44.889Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/posts/014_gender_assumptions/index_14.html</loc>
-    <lastmod>2024-04-16T22:27:44.965Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/posts/001_my_first_post/index_1.html</loc>
-    <lastmod>2024-04-16T22:27:44.885Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/posts/009_nonverbal/index_9.html</loc>
-    <lastmod>2024-04-16T22:27:44.917Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/index.html</loc>
-    <lastmod>2024-04-16T22:27:44.877Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/posts/008_college_counseling/index_8.html</loc>
-    <lastmod>2024-04-16T22:27:44.917Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/posts/013_facial_expressions/index_13.html</loc>
-    <lastmod>2024-04-16T22:27:44.957Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/posts/012_albums/index_12.html</loc>
-    <lastmod>2024-04-16T22:27:44.949Z</lastmod>
+    <lastmod>2024-04-23T02:29:28.381Z</lastmod>
   </url>
   <url>
     <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/posts/006_colors/index_6.html</loc>
-    <lastmod>2024-04-16T22:27:44.893Z</lastmod>
+    <lastmod>2024-04-23T02:29:28.361Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/posts/001_my_first_post/index_1.html</loc>
+    <lastmod>2024-04-23T02:29:28.353Z</lastmod>
   </url>
   <url>
     <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/posts/011_music/index_11.html</loc>
-    <lastmod>2024-04-16T22:27:44.941Z</lastmod>
+    <lastmod>2024-04-23T02:29:28.409Z</lastmod>
   </url>
   <url>
-    <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/posts/002_practice_post/index_2.html</loc>
-    <lastmod>2024-04-16T22:27:44.885Z</lastmod>
+    <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/posts/008_college_counseling/index_8.html</loc>
+    <lastmod>2024-04-23T02:29:28.385Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/posts/005_gendered_explanations/index_5.html</loc>
+    <lastmod>2024-04-23T02:29:28.357Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/posts/012_albums/index_12.html</loc>
+    <lastmod>2024-04-23T02:29:28.417Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/posts/009_nonverbal/index_9.html</loc>
+    <lastmod>2024-04-23T02:29:28.385Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/about.html</loc>
+    <lastmod>2024-04-23T02:29:28.345Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/posts/013_facial_expressions/index_13.html</loc>
+    <lastmod>2024-04-23T02:29:28.429Z</lastmod>
   </url>
   <url>
     <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/posts/010_health_campaign/index_10.html</loc>
-    <lastmod>2024-04-16T22:27:44.933Z</lastmod>
+    <lastmod>2024-04-23T02:29:28.401Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/posts/003_vday_post/index_3.html</loc>
+    <lastmod>2024-04-23T02:29:28.357Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/posts/015_music_battle/index_15.html</loc>
+    <lastmod>2024-04-23T02:29:28.449Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/posts/004_rhymes/index_4.html</loc>
+    <lastmod>2024-04-23T02:29:28.357Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/posts/002_practice_post/index_2.html</loc>
+    <lastmod>2024-04-23T02:29:28.353Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kendallen.github.io/comm4190_S24_Using_LLMs_Blog/posts/014_gender_assumptions/index_14.html</loc>
+    <lastmod>2024-04-23T02:29:28.433Z</lastmod>
   </url>
 </urlset>
