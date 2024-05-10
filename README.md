@@ -1,0 +1,3 @@
+# Kendall's Exploratory Blog
+
+Welcome to the repository for my blog in which I investigated Large Language Models throughout the semester! Here, you'll find all 16 of my blog posts, focusing on topics that range from nonverbal communication to the linguistics of rhyming. I had an amazing time exploring many different kinds of models and platforms, getting AI to generate poems, music, portraits, and more. You'll see lots of funny GitHub commit descriptions, a development of my technical understanding, and plenty of fun. Enjoy!
